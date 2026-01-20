@@ -90,6 +90,8 @@ wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`)
         }
         return computerMove;
           }
+
+        localStorage.setItem('score', JSON.stringify(score))
     </script>
   </body>
  </html>
