@@ -29,6 +29,8 @@
         score.losses = 0;
       }
 
+      console.log(JSON.parse(localStorage.getItem('score')));
+
       function gameStarted(playerMove) {
         const computerMove = setComputerMove();
         
@@ -73,6 +75,9 @@
           }
         }
 
+        
+      localStorage.setItem('score', JSON.stringify(score));
+
         alert(`Computer choosed ${computerMove}. You picked ${playerMove}. ${result}
 wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`)
       }
@@ -91,7 +96,7 @@ wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`)
         return computerMove;
           }
 
-        localStorage.setItem('score', JSON.stringify(score))
+
     </script>
   </body>
  </html>
