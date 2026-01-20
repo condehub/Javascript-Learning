@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Objects
+      </title>
+    </head>
+    <body>
+      <script>
+        const product = {
+          name: 'shampoo',
+          value: 18.99,
+          location: 8,
+          subtotal: function(quantidade) {
+            console.log(product.value * quantidade);
+          }
+        }
+
+        product.subtotal(10);
+
+        console.log(product.value)
+      </script>
+    </body>
+  </html>
