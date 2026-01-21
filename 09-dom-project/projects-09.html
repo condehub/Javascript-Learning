@@ -6,8 +6,24 @@
       </title>
     </head>
     <body>
-      <script>
+      <p>Youtube Subscribe Button</p>
+      <button onclick="subscribe();" class="subscribe-button">
+        Subscribe
+      </button>
 
+
+      
+      <script>
+        function subscribe() {
+          const subscribeButton = document.querySelector('.subscribe-button');
+          if (subscribeButton.innerText === 'Subscribe') {
+            subscribeButton.innerText = "Subscribed";
+            } else {
+              subscribeButton.innerText = "Subscribe";
+            }
+         }
       </script>
+
+
     </body>
   </html>
