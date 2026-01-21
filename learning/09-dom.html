@@ -2,23 +2,14 @@
   <html>
     <head>
       <title>
-        Objects
+        DOM
       </title>
     </head>
     <body>
+      <button>Good job!</button>
+
       <script>
-        const product = {
-          name: 'shampoo',
-          value: 18.99,
-          location: 8,
-          subtotal: function(quantidade) {
-            console.log(product.value * quantidade);
-          }
-        }
-
-        product.subtotal(10);
-
-        console.log(product.value)
+        document.body.innerHTML ='<button>changed</button>';
       </script>
     </body>
   </html>
