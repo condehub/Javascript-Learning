@@ -4,6 +4,8 @@
       <button id="rock" onClick="gameStarted('rock');">Rock</button>
       <button id="paper" onClick="gameStarted('paper');">Paper</button>
       <button id="scissors" onClick= "gameStarted('scissors');">Scissors</button>
+      <p class="result"></p>
+      <p class="moves"></p>
       <p class="score-text"></p>
       <button id="reset-score-button" onClick="resetScore();">Reset Score</button>
     </div>
@@ -11,6 +13,7 @@
 
     <script>
 
+      updateScore();
 
       let score = JSON.parse(localStorage.getItem('score')); // get score from the storage using parse
       
@@ -37,6 +40,8 @@
         localStorage.removeItem('score');
         updateScore();
       }
+
+      
 
       function gameStarted(playerMove) {
         const computerMove = setComputerMove();
