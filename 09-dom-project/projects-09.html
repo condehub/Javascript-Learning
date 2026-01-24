@@ -20,7 +20,7 @@
       <p>Amazon Shipping Calculator</p>
       <p class="amazon-text">Order under $40 = +$10 shipping.</p>
       <p class="amazon-text">Order over $40 = FREE shipping.</p>
-      <input placeholder="Cost of order">
+      <input placeholder="Cost of order" class="input-value">
       <button>Calculate</button>
       <p class="order-result"></p>
       <script>
@@ -34,7 +34,7 @@
          }
          
          function calculateOrder(value) {
-          let value, total;
+          let total;
           const tax = 10;
 
           if (value > 40) {
