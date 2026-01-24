@@ -20,7 +20,9 @@
       <p>Amazon Shipping Calculator</p>
       <p class="amazon-text">Order under $40 = +$10 shipping.</p>
       <p class="amazon-text">Order over $40 = FREE shipping.</p>
-      
+      <input placeholder="Cost of order">
+      <button>Calculate</button>
+      <p class="order-result"></p>
       <script>
         function subscribe() {
           const subscribeButton = document.querySelector('.subscribe-button');
@@ -30,8 +32,24 @@
               subscribeButton.innerText = "Subscribe";
             }
          }
+         
+         function calculateOrder(value) {
+          let value, total;
+          const tax = 10;
+
+          if (value > 40) {
+            total = value + tax;
+          } else {
+            total = value;
+          }
+         }
       </script>
 
 
     </body>
   </html>
+
+
+  1. A placeholder that takes the input of user.
+  2. Calculate the cost of order with the tax
+  3. Displays the result below the input section
