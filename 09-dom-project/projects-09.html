@@ -33,15 +33,17 @@
             }
          }
          
-         function calculateOrder(value) {
+         function calculateOrder() {
+          let price = document.querySelector('.input-value').value
           let total;
           const tax = 10;
 
-          if (value > 40) {
-            total = value + tax;
+          if (price > 40) {
+            total = price + tax;
           } else {
-            total = value;
+            total = price;
           }
+          return total;
          }
       </script>
 
