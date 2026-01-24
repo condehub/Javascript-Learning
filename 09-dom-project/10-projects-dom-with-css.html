@@ -1,10 +1,29 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <link rel="stylesheet" href="domcss.css">
       <title>
         DOM Projects
       </title>
+      <style>
+        .subscribe-button {
+          font-weight: bold;
+          color: white;
+          background-color: black;
+          border: none;
+          border-radius: 18px;
+          padding: 12px;
+          cursor: pointer;
+          transition: opacity 0.15s ease-out;
+        }
+
+        .subscribe-button:hover {
+          opacity: 0.5;
+        }
+
+        .subscribe-button:target {
+          opacity: 0.1;
+        }
+      </style>
     </head>
     <body>
       <p>Youtube Subscribe Button</p>
