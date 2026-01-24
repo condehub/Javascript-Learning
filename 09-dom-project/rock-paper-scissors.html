@@ -4,13 +4,18 @@
       <button id="rock" onClick="gameStarted('rock');">Rock</button>
       <button id="paper" onClick="gameStarted('paper');">Paper</button>
       <button id="scissors" onClick= "gameStarted('scissors');">Scissors</button>
+      <p class="score-text"></p>
       <button id="reset-score-button" onClick="resetScore();">Reset Score</button>
     </div>
+
+
     <script>
 
-      let score = JSON.parse(localStorage.getItem('score'));
+
+      let score = JSON.parse(localStorage.getItem('score')); // get score from the storage using parse
       
-      if (!score) {
+
+      if (!score) { // using short conditions to optimize code
         score = {
           wins: 0,
           losses: 0,
@@ -18,11 +23,19 @@
         };
       }
 
-      function resetScore() {
+      function updateScore() { // function to update score at each round
+        document.querySelector('.score-text')
+          .innerHTML = `wins: ${score.wins}, 
+          losses: ${score.losses}, ties: ${score.ties}`;
+      }
+      
+
+      function resetScore() { //Reset score button
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
         localStorage.removeItem('score');
+        updateScore();
       }
 
       function gameStarted(playerMove) {
@@ -72,9 +85,11 @@
         
       localStorage.setItem('score', JSON.stringify(score));
 
-        alert(`Computer choosed ${computerMove}. You picked ${playerMove}. ${result}
-wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`)
+      alert(`Computer choosed ${computerMove}. You picked ${playerMove}. ${result}`)
+      
+      updateScore();
       }
+
 
       function setComputerMove() {
         const choice = Math.random();
