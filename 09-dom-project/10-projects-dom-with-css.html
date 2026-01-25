@@ -5,6 +5,12 @@
         DOM Projects
       </title>
       <style>
+
+        p, a,
+        button {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
         .subscribe-button {
           font-weight: bold;
           color: white;
@@ -14,6 +20,7 @@
           padding: 12px;
           cursor: pointer;
           transition: opacity 0.15s ease-out;
+          margin-bottom: 30px;
         }
 
         .subscribe-button:hover {
@@ -28,6 +35,21 @@
           background-color: rgb(233, 224, 224);
           color: black;
         }
+
+        .input-value, .calculate-button {
+          font-size: 15px;
+          padding: 10px;
+        }
+        
+        .calculate-button {
+          color: white;
+          background-color: green;
+          border: none;
+        }
+
+        .amazon-text-title {
+          margin-top: 45px;
+        }
       </style>
     </head>
     <body>
@@ -41,12 +63,12 @@
 
       <a href="rock-paper-scissors.html" target="_blank">Click here</a>
 
-      <p>Amazon Shipping Calculator</p>
+      <p class="amazon-text-title">Amazon Shipping Calculator</p>
       <p class="amazon-text">Order under $40 = +$10 shipping.</p>
       <p class="amazon-text">Order over $40 = FREE shipping.</p>
       <input placeholder="Cost of order" class="input-value" onkeydown="
       onPressEnter(event);">
-      <button onclick="calculateOrder();">Calculate</button>
+      <button onclick="calculateOrder();" class="calculate-button">Calculate</button>
       <p class="order-result"></p>
       <script>
         function subscribe() {
@@ -56,6 +78,7 @@
             subscribeButton.classList.add('isSubscribed');
             } else {
               subscribeButton.innerText = "Subscribe";
+              subscribeButton.classList.remove('isSubscribed');
             }
          }
          
