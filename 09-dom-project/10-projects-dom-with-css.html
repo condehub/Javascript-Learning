@@ -27,8 +27,8 @@
           opacity: 0.5;
         }
 
-        .subscribe-button:target {
-          opacity: 0.1;
+        .subscribe-button:active {
+          opacity: 0.4;
         }
 
         .isSubscribed {
@@ -45,6 +45,18 @@
           color: white;
           background-color: green;
           border: none;
+          transition: opacity 0.15s ease-out;
+          padding: 12px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .calculate-button:hover {
+          opacity: 0.75;
+        }
+
+        .calculate-button:active {
+          opacity: 0.65;
         }
 
         .amazon-text-title {
@@ -61,7 +73,7 @@
 
       <p>Rock Paper Scissors</p>
 
-      <a href="rock-paper-scissors.html" target="_blank">Click here</a>
+      <a href="10-rock-paper-scissors.html" target="_blank">Click here</a>
 
       <p class="amazon-text-title">Amazon Shipping Calculator</p>
       <p class="amazon-text">Order under $40 = +$10 shipping.</p>
