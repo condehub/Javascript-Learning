@@ -1,9 +1,10 @@
 const todoArray = []; 
 
 function addTask() {
-  taskName = document.querySelector('.inputTaskPlace').value
+  inputElement = document.querySelector('.inputTaskPlace');
+  taskName = inputElement.value;
   todoArray.push(taskName);
   console.log(todoArray);
-  taskName = null;
+  inputElement.value = '';
 }
 
