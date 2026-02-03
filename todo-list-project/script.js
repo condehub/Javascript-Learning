@@ -5,7 +5,7 @@ let taskList = '';
 function displayTasks() {
   for (i = 0; i < todoArray.length; i++) {
     const taskName = todoArray[i];
-    const taskHTML = `<p>${taskName}</p>`;
+    const taskHTML = `<p>${taskName}<button>delete</button></p>`;
     taskList += taskHTML;
   }
   const taskContainer = document.querySelector('.tasks-container');
