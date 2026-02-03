@@ -1,4 +1,8 @@
-const todoArray = []; 
+const todoArray = [{
+  name: '',
+  dueDate: ''
+  }
+]; 
 let todoListHTML = '';
 let taskList = '';
 
@@ -24,7 +28,7 @@ function displayTasks() {
 function addTask() {
   inputElement = document.querySelector('.inputTaskPlace');
   taskName = inputElement.value;
-  todoArray.push(taskName);
+  todoObject.push(taskName);
   inputElement.value = '';
   displayTasks();
 }
