@@ -2,12 +2,16 @@ const todoArray = [];
 let todoListHTML = '';
 let taskList = '';
 
+
 function displayTasks() {
   for (i = 0; i < todoArray.length; i++) {
     const taskName = todoArray[i];
     const taskHTML = 
       `<p>${taskName}
-         <button onClick='deleteTask()'>delete</button>
+         <button onClick='todoArray.splice(${i}, 1);
+          displayTasks();'>
+          delete
+         </button>
       </p>`;
     taskList += taskHTML;
   }
