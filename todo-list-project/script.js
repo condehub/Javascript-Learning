@@ -38,7 +38,3 @@ function addTask() {
   dueDateInput.value = '';
   displayTasks();
 }
-
-
-
-
