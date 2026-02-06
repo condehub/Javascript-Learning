@@ -12,7 +12,7 @@ function displayTasks() {
       `<p>${taskName} ${taskDueDate}
         <button onClick='todoArray.splice(${i}, 1);
           displayTasks();'>
-          delete
+          Delete
         </button>
       </p>`;
     taskList += taskHTML;
