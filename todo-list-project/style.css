@@ -2,6 +2,8 @@ body
 {
   font-family: Arial;
   font-size: 16px;
+  background-color: black;
+  color: white;
 }
 
 p {
@@ -29,7 +31,7 @@ button {
   padding: 10px 5px;
   border: none;
   cursor: pointer;
-  transition: 
+  transition: opacity 0.15s;
 }
 
 button:hover {
