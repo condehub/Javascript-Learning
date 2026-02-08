@@ -9,12 +9,13 @@ function displayTasks() {
     const taskName = task.name;
     const taskDueDate = task.dueDate;
     const taskHTML = 
-      `<p>${taskName} ${taskDueDate}
-        <button onClick='todoArray.splice(${i}, 1);
+      ` <div>${taskName}</div> 
+        <div>${taskDueDate}</div>
+        <button class="deleteButton" onClick='todoArray.splice(${i}, 1);
           displayTasks();'>
           Delete
         </button>
-      </p>`;
+      `;
     taskList += taskHTML;
   }
   const taskContainer = document.querySelector('.tasks-container');

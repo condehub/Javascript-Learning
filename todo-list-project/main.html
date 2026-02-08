@@ -4,29 +4,19 @@
       <title>
         To-do List Projects
       </title>
-      <style>
-        body {
-          font-family: Arial;
-          font-size: 12px;
-        }
-
-        p {
-          font-size: 16px;
-        }
-        
-      </style>
+      <link rel="stylesheet" href="style.css" >
     </head>
     <body>
       <h1> To-do List 1 </h1>
-      <input class="inputTaskPlace" placeholder="Todo name">
-      <input class="due-date" type="date">
-      <button class="addButton" onclick="
-        addTask();
-        ">Add
-      </button>
-      <div class="tasks-container">
-        
+      <div class="input-task-container">
+        <input class="inputTaskPlace" placeholder="Todo name">
+        <input class="due-date" type="date">
+        <button class="addButton" onclick="
+          addTask();
+          ">Add
+        </button>
       </div>
+      <div class="tasks-container"></div>
       <script src="script.js"></script>
     </body>
   </html>

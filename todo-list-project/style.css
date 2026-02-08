@@ -1,8 +1,40 @@
-body {
-          font-family: Arial;
-          font-size: 12px;
-        }
+body 
+{
+  font-family: Arial;
+  font-size: 16px;
+}
 
 p {
   font-size: 16px;
+}
+
+.input-task-container, 
+.tasks-container {
+  display: grid;
+  grid-template-columns: 200px 150px 120px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.input-task-container {
+  margin-bottom: 10px;
+}
+
+.tasks-container {
+  align-items: center;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  border: none;
+}
+
+.addButton {
+  background-color: green;
+}
+
+.deleteButton {
+  background-color: darkred;
 }
