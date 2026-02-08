@@ -26,9 +26,18 @@ p {
 
 button {
   color: white;
-  font-weight: bold;
   padding: 10px 5px;
   border: none;
+  cursor: pointer;
+  transition: 
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.5;
 }
 
 .addButton {
