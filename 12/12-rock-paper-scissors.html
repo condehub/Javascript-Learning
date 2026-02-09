@@ -2,20 +2,67 @@
   <html>
     <head>
       <title>Rock Paper Scissors</title>
+
+      <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif
+          ;
+          background-color: black;
+          color: white;
+        }
+
+        .move-img {
+          height: 80px;
+        }
+
+        #rock, #paper, #scissors {
+          background-color: transparent;
+          margin-right: 30px;
+          border: 3px solid white;
+          border-radius: 60px;
+          height: 125px;
+          width: 125px;
+          cursor: pointer;
+        }
+
+        .result-text {
+          font-weight: bold;
+          font-size: 24px;
+        }
+
+        .reset-score-button,
+        .auto-play-button {
+          border: none;
+          background-color: green;
+          color: whitesmoke;
+          height: 50px;
+          width: 150px;
+          font-size: 20px;
+          cursor: pointer;
+        } 
+
+      </style>
     </head>
     <body>
     <h1>Rock Paper Scissors Game</h1>
     <div class="buttons-container">
-      <button id="rock" onClick="gameStarted('rock');">Rock</button>
-      <button id="paper" onClick="gameStarted('paper');">Paper</button>
-      <button id="scissors" onClick= "gameStarted('scissors');">Scissors</button>
+      <button id="rock" onClick="gameStarted('rock');">
+        <img class="move-img" src="images/rock-emoji.png">
+      </button>
+      <button id="paper" onClick="gameStarted('paper');">
+        <img class="move-img" src="images/paper-emoji.png">
+      </button>
+      <button id="scissors" onClick= "gameStarted('scissors');">
+        <img class="move-img" src="images/scissors-emoji.png">
+      </button>
       <p class="result-text"></p>
       <p class="moves-text"></p>
       <p class="score-text"></p>
-      <button id="reset-score-button" onClick="resetScore();">Reset Score</button>
+      <button class="reset-score-button" onClick="resetScore();">Reset Score</button>
+      <button class="auto-play-button" onclick="autoplay();">Auto play</button>
     </div>
 
-
+    
     <script>
       let computerMove;
       let playerMove;
@@ -30,13 +77,15 @@
         };
       }
 
-      updateScore();
+     
 
       function updateScore() { // function to update score at each round
         document.querySelector('.score-text')
           .innerHTML = `wins: ${score.wins}, 
           losses: ${score.losses}, ties: ${score.ties}`;
       }
+
+      updateScore();
       
 
       function resetScore() { //Reset score button
@@ -105,11 +154,15 @@
           }
         }
     
+      
       document.querySelector('.result-text')
           .innerHTML = result;
       document.querySelector('.moves-text')
-          .innerHTML = `You ${playerMove} - ${computerMove} Computer.`;
+        .innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-img"> - <img src="images/${computerMove}-emoji.png" class="move-img"> Computer.`
+
       updateScore();
+
+      localStorage.setItem('score', JSON.stringify(score));
       }
 
     </script>
