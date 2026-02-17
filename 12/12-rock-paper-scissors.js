@@ -4,7 +4,7 @@ let score = JSON.parse(localStorage.getItem('score')); // get score from the sto
 
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
-const scissorsButton = document.querySelector("scissors");
+const scissorsButton = document.querySelector("#scissors");
 
 rockButton.addEventListener('click', () => {
     gameStarted('rock');
