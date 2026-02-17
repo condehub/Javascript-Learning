@@ -2,7 +2,24 @@ let computerMove;
 let playerMove;
 let score = JSON.parse(localStorage.getItem('score')); // get score from the storage using parse
 
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("scissors");
 
+rockButton.addEventListener('click', () => {
+    gameStarted('rock');
+  } 
+)
+
+paperButton.addEventListener('click', () => {
+    gameStarted('paper');
+  } 
+)
+
+scissorsButton.addEventListener('click', () => {
+    gameStarted('scissors');
+  } 
+)
 if (!score) { // using short conditions to optimize code
   score = {
     wins: 0,
