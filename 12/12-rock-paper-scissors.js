@@ -20,6 +20,16 @@ scissorsButton.addEventListener('click', () => {
     gameStarted('scissors');
   } 
 )
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    gameStarted('rock');
+  } else if (event.key === 'p') {
+    gameStarted('paper');  
+  } else if (event.key === 's') {
+    gameStarted("scissors");
+  }
+})
 if (!score) { // using short conditions to optimize code
   score = {
     wins: 0,
