@@ -2,7 +2,21 @@ const todoArray = [];
 let todoListHTML = '';
 let taskList = '';
 
+document.body.addEventListener('keydown', (event) => {
+  inputElement = document.querySelector('.inputTaskPlace');
+  dueDateInput = document.querySelector('.due-date');
 
+  if (event.key === 'Enter') {
+    if (inputElement.value && dueDateInput.value) {
+      addTask();
+    }
+  }
+})
+
+const addButton = document.querySelector('addButton');
+addButton.addEventListener('click', () => {
+  addTask();
+})
 function displayTasks() {
   for (i = 0; i < todoArray.length; i++) {
     const task = todoArray[i];
