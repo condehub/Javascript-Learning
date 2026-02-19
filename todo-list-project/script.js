@@ -13,10 +13,11 @@ document.body.addEventListener('keydown', (event) => {
   }
 })
 
-const addButton = document.querySelector('addButton');
-addButton.addEventListener('click', () => {
+document.querySelector('.addButton').addEventListener('click', () => {
   addTask();
-})
+});
+
+
 function displayTasks() {
   for (i = 0; i < todoArray.length; i++) {
     const task = todoArray[i];
@@ -25,16 +26,25 @@ function displayTasks() {
     const taskHTML = 
       ` <div>${taskName}</div> 
         <div>${taskDueDate}</div>
-        <button class="deleteButton" onClick='todoArray.splice(${i}, 1);
-          displayTasks();'>
+        <button class="deleteButton">
           Delete
         </button>
       `;
     taskList += taskHTML;
+
   }
   const taskContainer = document.querySelector('.tasks-container');
   taskContainer.innerHTML = taskList; 
   taskList = '';
+
+  
+  document.querySelectorAll('.deleteButton')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+      todoArray.splice(index, 1);
+      displayTasks();
+    });
+  });    
 }
 
 
